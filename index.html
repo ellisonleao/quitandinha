@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quitandinha da Elis - 1º Aniversário</title>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Fredoka:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+/* Reset and base styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Fredoka', cursive;
+      background: #fff;
+      overflow-x: hidden;
+      position: relative;
+    }
+
+    /* Awning Header styles */
+    .header-container {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 1000;
+    }
+
+    .awning {
+      position: relative;
+      background: repeating-linear-gradient(
+        -45deg,
+        #ff6b6b,
+        #ff6b6b 10px,
+        #ff9f43 10px,
+        #ff9f43 20px
+          );
+      padding: 25px;
+      border-radius: 0 0 25px 25px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+      overflow: hidden;
+    }
+
+    /* Scalloped edge effect */
+    .awning::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 12px;
+      background: radial-gradient(
+        circle at 10px -4px,
+        transparent 12px,
+        rgba(255, 255, 255, 0.2) 13px
+          );
+      background-size: 20px 20px;
+      background-position: 0 -8px;
+    }
+
+    /* Inner shadow for depth */
+    .awning::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 100%;
+      background: linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, 0.1) 0%,
+        transparent 50%
+        );
+    }
+
+    .header-content {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+    }
+
+    .header-content h1 {
+      font-family: 'Pacifico', cursive;
+      font-size: 2.5em;
+      color: white;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+      margin: 0;
+    }
+
+    /* Rest of the styles remain the same */
+    .content {
+      text-align: center;
+      margin-top: 120px;
+      padding: 20px;
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .no-box {
+      box-shadow: none;
+    }
+
+    .section {
+      background: rgba(255, 255, 255, 0.9);
+      padding: 30px;
+      margin: 20px 0;
+      border-radius: 15px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    h2 {
+      color: #ff6b6b;
+      margin-bottom: 20px;
+      font-size: 1.8em;
+    }
+
+    .details {
+      font-size: 1.2em;
+      line-height: 1.6;
+    }
+
+    .details p {
+      margin: 10px 0;
+    }
+
+    .rsvp-form {
+      background: #f8f9fa;
+      padding: 20px;
+      border-radius: 10px;
+    }
+
+    /* Gentle awning swing animation */
+    .header-container {
+      animation: gentleSwing 4s infinite ease-in-out;
+      transform-origin: top center;
+    }
+
+    @keyframes gentleSwing {
+      0% { transform: rotate(0deg); }
+      50% { transform: rotate(0.5deg); }
+      100% { transform: rotate(0deg); }
+    }
+
+    .bubble-container {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+    }
+
+    .bubble {
+        position: absolute;
+        border-radius: 50%;
+        opacity: 0.6;
+        animation: float 8s infinite;
+        width: var(--size);
+        height: var(--size);
+        left: var(--x);
+        top: var(--y);
+        animation-delay: var(--delay);
+    }
+
+    .apple { background: #ff6b6b; }
+    .banana { background: #ffd93d; }
+    .orange { background: #ff9f43; }
+    .watermelon { background: #ff6b8b; }
+    .grape { background: #a55eea; }
+    .kiwi { background: #78e08f; }
+    .strawberry { background: #ff4757; }
+    .blueberry { background: #546de5; }
+
+    @keyframes float {
+        0% {
+            transform: translateY(0) translateX(0) scale(1);
+        }
+        33% {
+            transform: translateY(-50px) translateX(20px) scale(1.1);
+        }
+        66% {
+            transform: translateY(-20px) translateX(-20px) scale(0.9);
+        }
+        100% {
+            transform: translateY(0) translateX(0) scale(1);
+        }
+    }
+
+    @media (max-width: 768px) {
+      .header-content h1 {
+        font-size: 2em;
+      }
+
+      .content {
+        padding: 15px;
+      }
+
+      .section {
+        padding: 20px;
+      }
+    }
+
+    </style>
+  </head>
+  <body>
+    <div class="bubble-container">
+      <div class="bubble apple" style="--size:20px; --delay:0s; --x:10%; --y:20%;"></div>
+      <div class="bubble banana" style="--size:15px; --delay:2s; --x:20%; --y:40%;"></div>
+      <div class="bubble orange" style="--size:25px; --delay:1s; --x:30%; --y:60%;"></div>
+      <div class="bubble watermelon" style="--size:18px; --delay:3s; --x:70%; --y:30%;"></div>
+      <div class="bubble grape" style="--size:22px; --delay:2.5s; --x:80%; --y:50%;"></div>
+      <div class="bubble kiwi" style="--size:16px; --delay:1.5s; --x:90%; --y:70%;"></div>
+      <div class="bubble strawberry" style="--size:24px; --delay:0.5s; --x:40%; --y:80%;"></div>
+      <div class="bubble blueberry" style="--size:19px; --delay:2.8s; --x:60%; --y:90%;"></div>
+      <div class="bubble apple" style="--size:21px; --delay:3.2s; --x:15%; --y:85%;"></div>
+      <div class="bubble orange" style="--size:17px; --delay:1.8s; --x:75%; --y:15%;"></div>
+      <div class="bubble banana" style="--size:23px; --delay:2.3s; --x:45%; --y:25%;"></div>
+      <div class="bubble watermelon" style="--size:14px; --delay:1.2s; --x:85%; --y:75%;"></div>
+    </div>
+    <div class="header-container">
+      <div class="awning">
+        <div class="header-content">
+          <h1>Quitandinha da Elis</h1>
+        </div>
+      </div>
+    </div>
+
+    <div class="content">
+      <section class="section no-box">
+        <h1>Venha comemorar meu 1o Aniversário!</h1>
+        <img src="frutas.png" />
+      </section>
+      <section class="section">
+        <h2>🎈 Quando e Onde? 🎈</h2>
+        <div class="details">
+          <p>📅 <strong>Data:</strong> 22 de Março de 2025</p>
+          <p>⏰ <strong>Horário:</strong> 15:30 às 19:30</p>
+          <p>📍 <strong>Local:</strong> Buffet Infantil A Casa na Árvore - Av. N. Sra. Aparecida, 742 A (<a href="https://maps.app.goo.gl/zwqxPzXMiDvmyS138">ver no mapa</a>)</p>
+        </div>
+      </section>
+
+      <section class="section">
+        <h2>🍎 Confirme sua presença! 🍊</h2>
+        <div id="rsvp-form-container" class="rsvp-form">
+          <!-- RSVP form will be inserted here -->
+          <div class="embedsocial-forms-iframe" data-ref="5fff3126d92c6f535cb6299e90456b9886c825f9" data-widget="true" data-height="auto"></div><script>(function(d, s, id){var js; if (d.getElementById(id)) {return;} js = d.createElement(s); js.id = id; js.src = "https://embedsocial.com/cdn/ef.js"; d.getElementsByTagName("head")[0].appendChild(js);}(document, "script", "EmbedSocialFormsScript"));</script>
+        </div>
+      </section>
+    </div>
+
+  </body>
+</html>
